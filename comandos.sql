@@ -52,6 +52,10 @@ SELECT * FROM <tabla> WHERE <columna> NOT ILIKE <condicion>;
 SELECT * FROM <tabla> WHERE <columna> IS NULL;
 SELECT * FROM <tabla> WHERE <columna> IS NOT NULL;
 
+-- Actualizar columnas
+UPDATE <tabla> SET <columna> = <valor>;
+UPDATE <tabla> SET <columna> = <valor> WHERE <condicion>;
+
 -- Operaciones
 SELECT * FROM <tabla> ORDER BY <columna>  -- Default: ASC
 SELECT * FROM <tabla> ORDER BY <columna> DESC;
