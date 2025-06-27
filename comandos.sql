@@ -32,8 +32,10 @@ ALTER TABLE <table> ADD UNIQUE(<columna>);
 
 
 -- Hacer un dump (respaldo)
-pd_gump --clean --create --inserts --username=<user> <nombre de la base> > <archivo>.sql
+pd_dump --clean --create --inserts --username=<user> <nombre de la base> > <archivo>.sql
 -- El <user> es quien va a tener acceso a la base y al script -> Solo lo hace en el dump y ahí se ve
+
+pg_dump -cC --inserts -U freecodecamp <dbname> > <file>.sql
 
 -- Llamar a un respaldo
 psql -U <base de origen> < <archivo>.sql
@@ -55,6 +57,22 @@ SELECT * FROM <tabla> WHERE <columna> IS NOT NULL;
 -- Actualizar columnas
 UPDATE <tabla> SET <columna> = <valor>;
 UPDATE <tabla> SET <columna> = <valor> WHERE <condicion>;
+
+-- Renombrar tabla
+ALTER TABLE <tabla> RENAME TO <new_name>;
+
+-- Renombrar columnas
+ALTER TABLE <tabla> RENAME COLUMN <columna> TO <new_name>
+
+-- CONSTRAINTS
+ALTER TABLE <tabla> RENAME CONSTRAINT <nombre> TO <new_name>	-- Renombrar un CONSTRAINT
+ALTER TABLE <tabla> ALTER COLUMN <columna> SET NOT NULL;		-- Añadir NOT NULL
+ALTER TABLE <tabla> ALTER COLUMN <columna> DROP NOT NULL; 		-- Quitar NOT NULL 
+ALTER TABLE <tabla> ADD UNIQUE(<columna>);
+ALTER TABLE <tabla> ADD CONSTRAINT <nombre> UNIQUE(<columna>);
+
+-- Cambiar tipo de dato de columna
+ALTER TABLE <tabla> ALTER COLUMN <columna> SET DATA TYPE <dato>
 
 -- Operaciones
 SELECT * FROM <tabla> ORDER BY <columna>  -- Default: ASC
