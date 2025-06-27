@@ -1,0 +1,30 @@
+COMANDOS DE GIT / GITHUB PARA MANEJAR GIT
+
+-m "feat: <cambios hechos>"
+
+git init						->	Inicia y crea un git con terminación .git (consultar con ls -a)
+git status						->	Consultar el estatus de un git
+git checkout -b <branch_name>	->	Crea una nueva rama (-b : branch) (branch_name : nombre del repositorio) y cambia a esa rama
+git checkout <branch_name>		->	Cambiar de rama a otra
+git add <file>					->	Crear un nuevo file en el git
+git commit -m "MSG"				->	Hacer un commit y agregarle un mensaje (-m : message)
+git log							->	Checar el historial completo
+git log --online				->	Checar el historial compacto
+git log -N --online				->	Checar los últimos N commits
+git diff						->	Ver las diferencias entre 2 commits
+git branch						->	Ver las ramas que hay en el repositorio
+git merge <branch_name>			->	Combina los cambios entre ramas, de la ingresada a la que estemos (cuidar donde hacerlo)
+git branch -d <branch_name>		->	Eliminar una rama (-d : delete)
+git rebase <branch_name>		->	"Overtake" una rama
+git stash						->	Revertir temporalmente un commit
+git stash list					->	Listar todos los stash
+git stash show					-> 	Ver el último stash hecho
+git stash show -p				-> 	(-p : patch)
+git stash pop					->	Sacar un stash de la fila
+git stash apply					->	Aplicar cambios a los stash
+git stash drop <stash_name>		->	Eliminar un stash
+git reset HEAD~1				->	Resetear un commit a lo que esté apuntando HEAD
+git reset HEAD~1 --hard			->	No se añade al working tree
+git reset HEAD~1 --soft			->	Se aplica al working tree
+git revert HEAD					->	Revierte un commit más reciente (HEAD)
+git show						->	Muestra el último commit añadido
